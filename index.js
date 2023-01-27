@@ -55,10 +55,6 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/note", noteRoutes);
 
-app.get("/", (req, res) => {
-  res.send("APP RUNNING");
-});
-
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
 mongoose
