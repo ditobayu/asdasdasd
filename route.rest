@@ -1,0 +1,21 @@
+63d6dc093b6ccbf046d59105
+63d6ce1a7b3b8b234193bccf
+
+###
+POST http://localhost:3001/users/sendchat HTTP/1.1
+content-type: application/json
+
+{
+    "userID1": "63d6dc093b6ccbf046d59105",
+    "userID2": "63d6ce1a7b3b8b234193bccf",
+    "message": "sssss"
+}
+
+###
+PATCH http://localhost:3001/users/getchat HTTP/1.1
+content-type: application/json
+
+{
+    "userID2": "63d6dc093b6ccbf046d59105",
+    "userID1": "63d6ce1a7b3b8b234193bccf"
+}

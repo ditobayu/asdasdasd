@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import Chat from "../models/Chat.js";
 import User from "../models/User.js";
 
 // REGISTER
@@ -16,7 +17,6 @@ export const register = async (req, res) => {
       location,
       occupation,
     } = req.body;
-
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
     const newUser = new User({
