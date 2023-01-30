@@ -1,8 +1,7 @@
 import Chat from "../models/Chat.js";
 import User from "../models/User.js";
 
-// READ
-
+//PATCH
 export const sendChat = async (req, res) => {
   try {
     const { userID1, userID2, message } = req.body;
@@ -19,6 +18,7 @@ export const sendChat = async (req, res) => {
   }
 };
 
+// READ
 export const getChat = async (req, res) => {
   try {
     const { userID1, userID2 } = req.body;
