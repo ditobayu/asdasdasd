@@ -2,8 +2,51 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import Chat from "../models/Chat.js";
 import User from "../models/User.js";
+import nodemailer from "nodemailer";
 
 // REGISTER
+
+export const feedback = async (req, res) => {
+  try {
+    const { name, feedback } = req.body;
+    let mailTransporter = nodemailer.createTransport({
+      port: 465,
+      host: "smtp.gmail.com",
+
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+      },
+      secure: true,
+    });
+
+    let message = {
+      from: process.env.EMAIL,
+      to: "dbmlbb01@gmail.com",
+      subject: "Task Manager Feedback",
+      text: "That was easy!",
+      html: `
+      <div style="
+      width: 100%; 
+      background-color: transparent;
+      ">
+      <b>Dari : ${name}</b><br>Feedback : ${feedback}<br/>
+      </div>
+      
+      `,
+    };
+    mailTransporter.sendMail(message, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json("berhasil");
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 export const register = async (req, res) => {
   try {
     const {

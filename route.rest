@@ -19,3 +19,99 @@ content-type: application/json
     "userID2": "63d6dc093b6ccbf046d59105",
     "userID1": "63d6ce1a7b3b8b234193bccf"
 }
+
+###
+POST http://localhost:3001/auth/sendfeedback HTTP/1.1
+content-type: application/json
+
+{
+    "name" : "Asep Priyadi",
+    "feedback" : "lah kok iso"
+}
+
+###
+POST http://localhost:3001/posts HTTP/1.1
+content-type: application/json
+
+{
+    "userId" : "63e2682368751243c462249c",
+    "description" : "woooooooooooooooooooooooooooooooooooooooo",
+    "picturePat" : "gada"
+}
+###
+POST http://localhost:3001/challenge/createchallenge HTTP/1.1
+content-type: application/json
+
+{
+      "title": "HTML Dasar",
+      "desc": "belajar html di wpu",
+      "data": [
+        {
+            "title": "Pendahuluan",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/NBZ9Ro6UKV8",
+            "date": ""
+        },
+        {
+            "title": "Hello World!",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/1NicaVOCXHA",
+            "date": ""
+        },
+        {
+            "title": "Code Editor",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/3sLSi9L5nWE",
+            "date": ""
+        },
+        {
+            "title": "Pendahuluan",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/NBZ9Ro6UKV8",
+            "date": ""
+        },
+        {
+            "title": "Hello World!",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/1NicaVOCXHA",
+            "date": ""
+        },
+        {
+            "title": "Code Editor",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/3sLSi9L5nWE",
+            "date": ""
+        },
+        {
+            "title": "Pendahuluan",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/NBZ9Ro6UKV8",
+            "date": ""
+        },
+        {
+            "title": "Hello World!",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/1NicaVOCXHA",
+            "date": ""
+        },
+        {
+            "title": "Code Editor",
+            "desc": "html doang",
+            "video": "https://www.youtube.com/embed/3sLSi9L5nWE",
+            "date": ""
+        },
+      ],
+      "startDate": "asdasd"
+}
+
+###
+GET http://localhost:3001/challenge/getchallenge HTTP/1.1
+
+content-type: application/json
+id: 63f4a2a6983f4f0c42bb0dcf
+
+###
+GET http://localhost:3001/challenge/getallchallenge HTTP/1.1
+
+content-type: application/json
+id: 63f4a2a6983f4f0c42bb0dcf
