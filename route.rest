@@ -26,6 +26,7 @@ content-type: application/json
 
 {
     "name" : "Asep Priyadi",
+    "subject": "Portfolio Message",
     "feedback" : "lah kok iso"
 }
 
@@ -108,10 +109,20 @@ content-type: application/json
 GET http://localhost:3001/challenge/getchallenge HTTP/1.1
 
 content-type: application/json
-id: 63f4a2a6983f4f0c42bb0dcf
+id: "63f82f3e2ba05a8b4a5b684f"
 
 ###
 GET http://localhost:3001/challenge/getallchallenge HTTP/1.1
 
 content-type: application/json
 id: 63f4a2a6983f4f0c42bb0dcf
+
+
+###
+patch http://localhost:3001/challenge/joinChallenge HTTP/1.1
+content-type: application/json
+
+{
+    "userId" : "63e2682368751243c462249c",
+    "challengeId" : "63f82f3e2ba05a8b4a5b684f"
+}

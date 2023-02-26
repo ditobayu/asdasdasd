@@ -8,7 +8,7 @@ import nodemailer from "nodemailer";
 
 export const feedback = async (req, res) => {
   try {
-    const { name, feedback } = req.body;
+    const { name, subject, feedback } = req.body;
     let mailTransporter = nodemailer.createTransport({
       port: 465,
       host: "smtp.gmail.com",
@@ -23,8 +23,8 @@ export const feedback = async (req, res) => {
     let message = {
       from: process.env.EMAIL,
       to: "dbmlbb01@gmail.com",
-      subject: "Task Manager Feedback",
-      text: "That was easy!",
+      subject: subject,
+      text: "pesan",
       html: `
       <div style="
       width: 100%; 
